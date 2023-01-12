@@ -11,6 +11,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.sdjic.R;
 
+import java.util.Objects;
+
 public class ImageAdapter extends PagerAdapter {
 
     Context mContext;
@@ -35,7 +37,7 @@ public class ImageAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        ((ViewPager2) container).removeView((ImageView) object);
+        container.removeView((ImageView) object);
     }
 
     @NonNull
@@ -45,7 +47,7 @@ public class ImageAdapter extends PagerAdapter {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(sliderImageId[position]);
 
-        container.addView(imageView, 0);
+        Objects.requireNonNull(container).addView(imageView);
 
         return imageView;
     }

@@ -1,7 +1,7 @@
 package com.example.sdjic;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
@@ -14,8 +14,8 @@ public class ImageSliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_slider);
 
-        ViewPager2 mViewPage = (ViewPager2) findViewById(R.id.ViewPage);
+        ViewPager mViewPage = findViewById(R.id.ViewPage);
         ImageAdapter adapter = new ImageAdapter(this);
-        //mViewPage.setAdapter(adapter);
+        mViewPage.setAdapter(adapter);
     }
 }
